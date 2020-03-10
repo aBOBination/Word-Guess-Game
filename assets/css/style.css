@@ -8,3 +8,12 @@
     border-style: dotted;
     padding: 1rem;
 }
+
+.word {
+    letter-spacing: 1rem;
+    white-space: pre;
+}
+
+#letters {
+    letter-spacing: 1rem;
+}
