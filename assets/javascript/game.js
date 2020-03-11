@@ -1,4 +1,5 @@
 var hangman = {
+
     words: [
         "JEAN-LUC PICARD",
         "WILLIAM RIKER",
@@ -39,18 +40,16 @@ var hangman = {
             } else {
                 display.push("_");
             }
-        // for loop to check if you have all the letts and win
         }
         this.displayWord = display.join(' ')
         document.getElementById("word").innerHTML = this.displayWord;
-        console.log(display)
+
         if(!display.includes("_")) {
-            alert("You Win!!!");
+            alert("You Win!!! \nThe word was " + this.word);
             this.setRandomWord()
-            document.getElementById("wins").innerHTML = this.wins += 1;
+            document.getElementById("wins").innerHTML = this.wins++;
             this.reset()
         }
-
     },
 
     setRandomWord: function() {
@@ -74,12 +73,16 @@ var hangman = {
             this.lettersCorrect.push(letter)
             this.setDisplayWord()
 
-        } else {
-            if(!this.lettersWrong.includes(letter) ) {
-                this.lettersWrong.push(letter)
-                document.getElementById("letters").innerHTML = this.lettersWrong.join(" ").toUpperCase();
-                document.getElementById("guesses").innerHTML = this.guesses -= 1;
-            }
+        } else if (!this.lettersWrong.includes(letter) && !this.word.includes(letter)){
+            this.guesses--
+            this.lettersWrong.push(letter)
+            document.getElementById("letters").innerHTML = this.lettersWrong.join(" ").toUpperCase();
+            document.getElementById("guesses").innerHTML = this.guesses ;
+        };
+        if(this.guesses === 0) {
+            alert("You Lost! \nThe word was " + this.word)
+            this.wins = 0
+            this.reset()
         }
     },
 
@@ -89,9 +92,6 @@ var hangman = {
         this.lettersWrong = [];
         this.lettersCorrect = [" ", "-", "'"];
         this.setRandomWord();
-
-
-
     }
 };
 
@@ -99,4 +99,5 @@ hangman.setRandomWord();
 
 document.onkeyup = function(event) {
     hangman.guessLetter(event.key.toUpperCase())
+    console.log(event.key.toUpperCase())
 }

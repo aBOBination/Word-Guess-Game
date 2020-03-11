@@ -10,7 +10,7 @@
 }
 
 .word {
-    letter-spacing: 1rem;
+    letter-spacing: .5rem;
     white-space: pre;
 }
 
