@@ -22,8 +22,6 @@ var hangman = {
 
     displayWord: "",
 
-    wordArray: [],
-
     guesses : 15,
 
     lettersWrong : [],
@@ -55,17 +53,11 @@ var hangman = {
     setRandomWord: function() {
         if(this.word === "") {
             this.word = this.words[Math.floor(Math.random() * this.words.length)];
-            this.randomWordArray();
             this.setDisplayWord();
-            document.getElementById("letters").innerHTML = this.lettersWrong.join(" ").toUpperCase();
+            // document.getElementById("letters").innerHTML = this.lettersWrong.join(" ").toUpperCase();
             document.getElementById("guesses").innerHTML = this.guesses;
             document.getElementById("wins").innerHTML = this.wins;
         }
-    },
-
-    randomWordArray: function() {
-        arr = this.word.split("");
-        this.wordArray.push(arr)
     },
 
     guessLetter: function(letter) {
