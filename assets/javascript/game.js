@@ -1,5 +1,3 @@
-var audio = new Audio("audio/ShutUpWesley.m4a");
-
 var hangman = {
 
     words: [
@@ -74,7 +72,6 @@ var hangman = {
             document.getElementById("guesses").innerHTML = this.guesses ;
         };
         if(this.guesses === 0) {
-            audio.play();
             alert("You Lost! \nThe word was " + this.word)
             this.wins = 0
             this.reset()
