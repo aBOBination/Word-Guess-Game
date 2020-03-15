@@ -1,14 +1,23 @@
-
-
+body {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
 .header {
-    border-style: dotted;
+    font-family: star-trek;
+    color: white;
     margin-bottom: 1rem;
     padding: 1rem;
+    opacity: 0.75;
 }
 
 .game {
+    color: white;
     border-style: dotted;
     padding: 1rem;
+    background-color: black;
+    opacity: 0.75;
+
 }
 
 .word {
@@ -21,6 +30,7 @@
 }
 
 .game-img {
-    max-width: 386px;
-    border-style: solid
+    max-width: 100%;
+    border-style: solid;
+    opacity: 0.75;
 }
