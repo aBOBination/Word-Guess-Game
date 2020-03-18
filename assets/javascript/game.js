@@ -90,7 +90,7 @@ var hangman = {
 hangman.setRandomWord();
 
 document.onkeyup = function(event) {
-    if(event.keyCode > 64 && event.keyCode < 91)
-    hangman.guessLetter(event.key.toUpperCase())
-    console.log(event.keyCode)
+    if(event.keyCode > 64 && event.keyCode < 91) {
+        hangman.guessLetter(event.key.toUpperCase())
+    }
 }
